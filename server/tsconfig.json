@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "dom", "esnext"],
+    "module": "commonjs",
+    "strict": true,
+    "target": "esnext",
+    "removeComments": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules", "**/*.test.ts"]
+}
