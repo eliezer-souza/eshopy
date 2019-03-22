@@ -1,7 +1,21 @@
 {
-  "name": "root",
+  "name": "eshopy",
   "private": true,
+  "scripts": {
+    "commit": "git-cz"
+  },
   "devDependencies": {
-    "lerna": "^3.4.3"
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "lerna": "^3.4.3",
+    "sequelize-cli": "^5.4.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./server/node_modules/cz-conventional-changelog"
+    }
   }
 }
