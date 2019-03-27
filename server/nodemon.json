@@ -1,0 +1,7 @@
+{
+  "watch": ["src"],
+  "execMap": {
+    "ts": "cross-env NODE_ENV=development ts-node src/index.ts"
+  },
+  "ext": "ts"
+}
