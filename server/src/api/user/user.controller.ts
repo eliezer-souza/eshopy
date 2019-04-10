@@ -1,8 +1,9 @@
 import { Request, Response, NextFunction } from "express";
-import HttpException from "@eshopy/exception/http.exception";
+import HttpException from "@eshopy/exception/http-exception";
 import { User } from "@eshopy/entities";
 
 import IUser from "./user.interface";
+import { CreateUserDTO } from "./user.dto";
 
 class UserController {
   async create(
@@ -10,7 +11,7 @@ class UserController {
     response: Response,
     next: NextFunction
   ): Promise<IUser | Response> {
-    const { username, password, email } = request.body;
+    const { username, password, email }: CreateUserDTO = request.body;
 
     const findUser = await User.find({
       where: { email: email, username: username }
