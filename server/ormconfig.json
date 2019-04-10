@@ -1,0 +1,49 @@
+[
+  {
+    "name": "development",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "eshopy",
+    "synchronize": true,
+    "logging": true,
+    "entities": ["src/api/entities/*.entity.ts"],
+    "migrations": ["src/database/migration/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/api/entities",
+      "migrationsDir": "src/database/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  },
+  {
+    "name": "production",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "eshopy",
+    "synchronize": false,
+    "logging": false,
+    "entities": ["build/api/entities/*.entity.js"],
+    "migrations": ["build/database/migration/**/*.js"],
+    "subscribers": ["build/subscriber/**/*.js"]
+  },
+  {
+    "name": "test",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "eshopy_test",
+    "synchronize": true,
+    "logging": true,
+    "entities": ["src/api/entities/*.entity.ts"],
+    "migrations": ["src/database/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"]
+  }
+]
