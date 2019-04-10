@@ -1,6 +1,12 @@
-import { Connection, createConnection, getConnectionOptions } from "typeorm";
+/* eslint-disable no-await-in-loop */
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+import {
+  Connection,
+  createConnection as createConnectionORM,
+  getConnectionOptions
+} from "typeorm";
 
-export const createTypeormConn = async (): Promise<Connection | null> => {
+export default async function createConnection(): Promise<Connection | null> {
   let retries = 5;
   while (retries) {
     try {
@@ -9,9 +15,9 @@ export const createTypeormConn = async (): Promise<Connection | null> => {
         ...config,
         name: "default",
         username: process.env.DB_USER,
-        password: process.env.DB_PASS,
+        password: process.env.DB_PASS
       };
-      return createConnection(secureConfig);
+      return createConnectionORM(secureConfig);
     } catch (err) {
       console.log(err);
       retries -= 1;
@@ -22,4 +28,4 @@ export const createTypeormConn = async (): Promise<Connection | null> => {
   }
 
   return null;
-};
+}

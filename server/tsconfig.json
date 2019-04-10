@@ -4,14 +4,22 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "sourceMap": true,
-    "outDir": "./build",
+    "outDir": "build",
     "baseUrl": ".",
-    "rootDir": "src"
+    "paths": {
+      "@eshopy/*": ["src/*"],
+      "@eshopy/api/*": ["src/api/*"],
+      "@eshopy/entities": ["src/api/entities"],
+      "@eshopy/config/*": ["src/modules/config/*"],
+      "@eshopy/exception/*": ["src/modules/exception/*"],
+      "@eshopy/middleware/*": ["src/modules/middleware/*"]
+    }
   },
   "exclude": ["node_modules"]
 }

@@ -9,11 +9,11 @@
     "database": "eshopy",
     "synchronize": true,
     "logging": true,
-    "entities": ["src/entity/**/*.ts"],
-    "migrations": ["src/database/migration/**/*.ts"],
+    "entities": ["src/api/entities/*.entity.ts"],
+    "migrations": ["src/database/migration/*.ts"],
     "subscribers": ["src/subscriber/**/*.ts"],
     "cli": {
-      "entitiesDir": "src/entity",
+      "entitiesDir": "src/api/entities",
       "migrationsDir": "src/database/migration",
       "subscribersDir": "src/subscriber"
     }
@@ -28,8 +28,22 @@
     "database": "eshopy",
     "synchronize": false,
     "logging": false,
-    "entities": ["build/entity/**/*.ts"],
-    "migrations": ["build/database/migration/**/*.ts"],
-    "subscribers": ["build/subscriber/**/*.ts"]
+    "entities": ["build/api/entities/*.entity.js"],
+    "migrations": ["build/database/migration/**/*.js"],
+    "subscribers": ["build/subscriber/**/*.js"]
+  },
+  {
+    "name": "test",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "eshopy_test",
+    "synchronize": true,
+    "logging": true,
+    "entities": ["src/api/entities/*.entity.ts"],
+    "migrations": ["src/database/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"]
   }
 ]
