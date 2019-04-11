@@ -9,7 +9,7 @@
     "database": "eshopy",
     "synchronize": true,
     "logging": true,
-    "entities": ["src/api/entities/*.entity.ts"],
+    "entities": ["src/modules/entities/*.entity.ts"],
     "migrations": ["src/database/migration/*.ts"],
     "subscribers": ["src/subscriber/**/*.ts"],
     "cli": {
@@ -28,7 +28,7 @@
     "database": "eshopy",
     "synchronize": false,
     "logging": false,
-    "entities": ["build/api/entities/*.entity.js"],
+    "entities": ["build/modules/entities/*.entity.js"],
     "migrations": ["build/database/migration/**/*.js"],
     "subscribers": ["build/subscriber/**/*.js"]
   },
@@ -41,8 +41,8 @@
     "password": "postgres",
     "database": "eshopy_test",
     "synchronize": true,
-    "logging": true,
-    "entities": ["src/api/entities/*.entity.ts"],
+    "logging": false,
+    "entities": ["src/modules/entities/*.entity.ts"],
     "migrations": ["src/database/migration/**/*.ts"],
     "subscribers": ["src/subscriber/**/*.ts"]
   }

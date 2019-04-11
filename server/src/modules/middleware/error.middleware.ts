@@ -1,5 +1,5 @@
-import { NextFunction, Request, Response } from "express";
-import HttpException from "../exception/http-exception";
+import { NextFunction, Request, Response } from 'express';
+import HttpException from '@eshopy/exception/http.exception';
 
 function errorMiddleware(
   error: HttpException,
@@ -8,7 +8,7 @@ function errorMiddleware(
   next: NextFunction
 ) {
   const status = error.status || 500;
-  const message = error.message || "Something went wrong";
+  const message = error.message || 'Something went wrong';
   response.status(status).send({
     status,
     message

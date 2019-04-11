@@ -1,7 +1,7 @@
-import { RequestHandler, Response, Request, NextFunction } from "express";
-import { plainToClass } from "class-transformer";
-import { validate, ValidationError } from "class-validator";
-import HttpException from "@eshopy/exception/http-exception";
+import { RequestHandler, Response, Request, NextFunction } from 'express';
+import { plainToClass } from 'class-transformer';
+import { validate, ValidationError } from 'class-validator';
+import HttpException from '@eshopy/exception/http.exception';
 
 function validationData<T>(
   type: any,
@@ -13,7 +13,7 @@ function validationData<T>(
         if (errors.length > 0) {
           const message = errors
             .map((error: ValidationError) => Object.values(error.constraints))
-            .join(", ");
+            .join(', ');
           next(new HttpException(400, message));
         } else {
           next();
