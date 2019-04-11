@@ -4,7 +4,7 @@ import {
   Connection,
   createConnection as createConnectionORM,
   getConnectionOptions
-} from "typeorm";
+} from 'typeorm';
 
 export default async function createConnection(): Promise<Connection | null> {
   let retries = 5;
@@ -13,7 +13,7 @@ export default async function createConnection(): Promise<Connection | null> {
       const config = await getConnectionOptions(process.env.NODE_ENV);
       const secureConfig = {
         ...config,
-        name: "default",
+        name: 'default',
         username: process.env.DB_USER,
         password: process.env.DB_PASS
       };

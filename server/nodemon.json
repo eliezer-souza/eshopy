@@ -3,5 +3,6 @@
   "execMap": {
     "ts": "cross-env NODE_ENV=development ts-node -r tsconfig-paths/register src/index.ts"
   },
-  "ext": "ts"
+  "ext": "ts",
+  "ignoreRoot": ["**/__tests__/**"]
 }

@@ -1,10 +1,10 @@
-import "reflect-metadata";
+import 'reflect-metadata';
 
-import express from "express";
-import http from "http";
-import loadModules from "./modules/config/load-modules.config";
-import createConnection from "./modules/config/create-connection.config";
-import applications from "./api";
+import express from 'express';
+import http from 'http';
+import loadModules from '@eshopy/config/load-modules.config';
+import createConnection from '@eshopy/config/create-connection.config';
+import applications from './api';
 
 const PORT = process.env.PORT || 3000;
 

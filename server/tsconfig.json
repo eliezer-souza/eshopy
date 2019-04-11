@@ -15,7 +15,7 @@
     "paths": {
       "@eshopy/*": ["src/*"],
       "@eshopy/api/*": ["src/api/*"],
-      "@eshopy/entities": ["src/api/entities"],
+      "@eshopy/entities": ["src/modules/entities"],
       "@eshopy/config/*": ["src/modules/config/*"],
       "@eshopy/exception/*": ["src/modules/exception/*"],
       "@eshopy/middleware/*": ["src/modules/middleware/*"]

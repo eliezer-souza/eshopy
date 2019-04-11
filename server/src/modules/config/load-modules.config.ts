@@ -1,10 +1,10 @@
-import { Application } from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import helmet from "helmet";
-import morgan from "morgan";
-import compress from "compression";
-import errorMiddleware from "../middleware/error-middleware";
+import { Application } from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import compress from 'compression';
+import errorMiddleware from '@eshopy/middleware/error.middleware';
 
 export default function loadModules(server: Application): void {
   // Configuration request body parser
@@ -18,7 +18,7 @@ export default function loadModules(server: Application): void {
   server.use(helmet());
 
   // request logging
-  server.use(morgan("combined"));
+  server.use(morgan('combined'));
 
   // gzip compression
   server.use(compress());

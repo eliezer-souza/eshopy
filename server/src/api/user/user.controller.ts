@@ -1,9 +1,9 @@
-import { Request, Response, NextFunction } from "express";
-import HttpException from "@eshopy/exception/http-exception";
-import { User } from "@eshopy/entities";
+import { Request, Response, NextFunction } from 'express';
+import HttpException from '@eshopy/exception/http.exception';
+import { User } from '@eshopy/entities';
 
-import IUser from "./user.interface";
-import { CreateUserDTO } from "./user.dto";
+import IUser from './user.interface';
+import { CreateUserDTO } from './user.dto';
 
 class UserController {
   async create(
@@ -18,12 +18,12 @@ class UserController {
     });
 
     if (findUser.length !== 0) {
-      await next(new HttpException(404, "User already exists"));
+      await next(new HttpException(404, 'User already exists'));
     } else {
       const user = await User.create({ username, password, email }).save();
 
       if (!user) {
-        await next(new HttpException(404, "User not created"));
+        await next(new HttpException(404, 'User not created'));
       } else {
         return response.send({ user });
       }
