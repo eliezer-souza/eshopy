@@ -1,10 +1,10 @@
-import { Application } from 'express';
+import errorMiddleware from '@eshopy/middleware/error.middleware';
 import bodyParser from 'body-parser';
+import compress from 'compression';
 import cors from 'cors';
+import { Application } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import compress from 'compression';
-import errorMiddleware from '@eshopy/middleware/error.middleware';
 
 export default function loadModules(server: Application): void {
   // Configuration request body parser

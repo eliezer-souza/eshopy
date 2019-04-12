@@ -1,23 +1,19 @@
-import { Request, Response, NextFunction } from 'express';
-import HttpException from '@eshopy/exception/http.exception';
 import { User } from '@eshopy/entities';
+import HttpException from '@eshopy/exception/http.exception';
+import { NextFunction, Request, Response } from 'express';
 
-import IUser from './user.interface';
 import { CreateUserDTO } from './user.dto';
+import IUser from './user.interface';
 
 class UserController {
-  async create(
-    request: Request,
-    response: Response,
-    next: NextFunction
-  ): Promise<IUser | Response> {
+  async create(request: Request, response: Response, next: NextFunction): Promise<IUser | Response> {
     const { username, password, email }: CreateUserDTO = request.body;
 
-    const findUser = await User.find({
-      where: { email: email, username: username }
-    });
-
-    if (findUser.length !== 0) {
+    if (
+      (await User.find({
+        where: { email, username },
+      })).length !== 0
+    ) {
       await next(new HttpException(404, 'User already exists'));
     } else {
       const user = await User.create({ username, password, email }).save();
@@ -30,10 +26,7 @@ class UserController {
     }
   }
 
-  async users(
-    request: Request,
-    response: Response
-  ): Promise<IUser[] | Response> {
+  async users(request: Request, response: Response): Promise<IUser[] | Response> {
     const users = await User.find();
     return response.json({ users });
   }

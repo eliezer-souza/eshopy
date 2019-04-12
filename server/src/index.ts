@@ -1,7 +1,8 @@
 import 'reflect-metadata';
 
-import http from 'http';
 import createConnection from '@eshopy/config/create-connection.config';
+import http from 'http';
+
 import Application from './application';
 
 const PORT = process.env.PORT || 3000;
@@ -12,9 +13,8 @@ export default async function startServer(): Promise<void> {
   // creating the connection with database
   await createConnection();
 
-  server.listen(PORT, () =>
-    console.log(`server started on port ${PORT} (${process.env.NODE_ENV})`)
-  );
+  // tslint:disable-next-line:no-console
+  server.listen(PORT, () => console.log(`server started on port ${PORT} (${process.env.NODE_ENV})`));
 }
 
 setImmediate(startServer);

@@ -1,5 +1,5 @@
-import express from 'express';
 import loadModules from '@eshopy/config/load-modules.config';
+import express from 'express';
 import services from './services';
 
 class Application {

@@ -1,5 +1,5 @@
-import { Router } from 'express';
 import validationData from '@eshopy/middleware/validation-data.middleware';
+import { Router } from 'express';
 
 import UserController from './user.controller';
 import { CreateUserDTO } from './user.dto';
