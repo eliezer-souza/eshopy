@@ -10,8 +10,7 @@
     "migration:test": "cross-env NODE_ENV=test ts-node run-migrations.ts",
     "build": "tsc -p tsconfig.json",
     "test": "cross-env NODE_ENV=test jest --detectOpenHandles",
-    "lint": "tslint -c tslint.json src/**/*.ts",
-    "lint-staged": "lint-staged"
+    "lint": "tslint -c tslint.json src/**/*.ts"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
