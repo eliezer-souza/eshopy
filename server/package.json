@@ -9,7 +9,8 @@
     "migration:prod": "cross-env NODE_ENV=production ts-node run-migrations.ts",
     "migration:test": "cross-env NODE_ENV=test ts-node run-migrations.ts",
     "build": "tsc -p tsconfig.json",
-    "test": "cross-env NODE_ENV=test jest --detectOpenHandles"
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles",
+    "lint": "tslint -c tslint.json src/**/*.ts"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
@@ -23,15 +24,8 @@
     "@types/morgan": "^1.7.35",
     "@types/node": "^11.12.0",
     "@types/supertest": "^2.0.7",
-    "@typescript-eslint/eslint-plugin": "^1.6.0",
-    "@typescript-eslint/parser": "^1.6.0",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-prettier": "^3.0.1",
     "faker": "^4.1.0",
     "jest": "^24.7.1",
     "nodemon": "^1.18.10",
@@ -61,5 +55,15 @@
     "pg": "^7.9.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "0.2.16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts}": [
+      "npm run lint"
+    ]
   }
 }

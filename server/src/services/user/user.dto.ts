@@ -1,4 +1,4 @@
-import { IsString, IsEmail, MaxLength } from 'class-validator';
+import { IsEmail, IsString, MaxLength } from 'class-validator';
 
 export class CreateUserDTO {
   @IsString()
