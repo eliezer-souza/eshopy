@@ -2,7 +2,7 @@ import loadModules from '@eshopy/config/load-modules.config';
 import * as Sentry from '@sentry/node';
 import dotenv from 'dotenv';
 import express from 'express';
-import services from './services';
+import api from './api';
 
 dotenv.config();
 
@@ -17,8 +17,8 @@ class Application {
     // loading all the modules and middlewares
     loadModules(this.express);
 
-    // loading all the services
-    this.express.use(services);
+    // loading all apis
+    this.express.use(api);
 
     // errorHandle of Sentry
     this.express.use(Sentry.Handlers.errorHandler());

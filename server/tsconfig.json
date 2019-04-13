@@ -14,7 +14,7 @@
     "baseUrl": ".",
     "paths": {
       "@eshopy/*": ["src/*"],
-      "@eshopy/services/*": ["src/services/*"],
+      "@eshopy/api/*": ["src/api/*"],
       "@eshopy/entities": ["src/modules/entities"],
       "@eshopy/config/*": ["src/modules/config/*"],
       "@eshopy/exception/*": ["src/modules/exception/*"],

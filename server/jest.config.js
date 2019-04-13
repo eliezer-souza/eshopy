@@ -8,11 +8,11 @@ module.exports = {
   coverageDirectory: '__tests__/coverage',
   testMatch: ['**/__tests__/**/*.test.ts?(x)'],
   moduleNameMapper: {
-    '@eshopy/services/(.*)': '<rootDir>/src/services/$1',
+    '@eshopy/api/(.*)': '<rootDir>/src/api/$1',
     '@eshopy/middleware/(.*)': '<rootDir>/src/modules/middleware/$1',
     '@eshopy/entities': '<rootDir>/src/modules/entities',
     '@eshopy/config/(.*)': '<rootDir>/src/modules/config/$1',
     '@eshopy/exception/(.*)': '<rootDir>/src/modules/exception/$1',
-    '@eshopy/(.*)': '<rootDir>/src/$1'
-  }
+    '@eshopy/(.*)': '<rootDir>/src/$1',
+  },
 };
