@@ -9,7 +9,7 @@ jobs:
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: eshopy_test
 
-    working_directory: ~/repo
+    working_directory: ~/server
 
     steps:
       - checkout
