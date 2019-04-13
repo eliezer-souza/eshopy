@@ -3,16 +3,16 @@ jobs:
   build:
     docker:
       - image: circleci/node:11.13.0
-      - image: circleci/postgres:latest
+      - image: circleci/postgres:11-alpine
         environment:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: eshopy_test
 
-    working_directory: ~/server
+    working_directory: ~/repo
 
     steps:
       - checkout
-      - run: npm install
-      - run: npm run migration:test
-      - run: npm run test:ci
+      - run: cd server && npm install
+      - run: cd server && npm run migration:test
+      - run: cd server && npm run test:ci
