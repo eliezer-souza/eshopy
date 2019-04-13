@@ -1,9 +1,12 @@
 import 'reflect-metadata';
 
 import createConnection from '@eshopy/config/create-connection.config';
+import dotenv from 'dotenv';
 import http from 'http';
 
 import Application from './application';
+
+dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 

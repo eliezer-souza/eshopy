@@ -6,23 +6,27 @@ import { CreateUserDTO } from './user.dto';
 import IUser from './user.interface';
 
 class UserController {
-  async create(request: Request, response: Response, next: NextFunction): Promise<IUser | Response> {
-    const { username, password, email }: CreateUserDTO = request.body;
+  async create(request: Request, response: Response, next: NextFunction): Promise<IUser | Response | void> {
+    try {
+      const { username, password, email }: CreateUserDTO = request.body;
 
-    if (
-      (await User.find({
-        where: { email, username },
-      })).length !== 0
-    ) {
-      await next(new HttpException(404, 'User already exists'));
-    } else {
-      const user = await User.create({ username, password, email }).save();
-
-      if (!user) {
-        await next(new HttpException(404, 'User not created'));
+      if (
+        (await User.find({
+          where: { email, username },
+        })).length !== 0
+      ) {
+        await next(new HttpException(404, 'User already exists'));
       } else {
-        return response.send({ user });
+        const user = await User.create({ username, password, email }).save();
+
+        if (!user) {
+          await next(new HttpException(404, 'User not created'));
+        } else {
+          return response.send({ user });
+        }
       }
+    } catch (error) {
+      return next(error);
     }
   }
 
