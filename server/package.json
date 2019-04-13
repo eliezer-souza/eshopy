@@ -45,6 +45,7 @@
     }
   },
   "dependencies": {
+    "@sentry/node": "^5.0.7",
     "body-parser": "^1.18.3",
     "class-transformer": "^0.2.0",
     "class-validator": "^0.9.1",
