@@ -14,7 +14,7 @@ describe('User', () => {
     console.log(user);
 
     const response = await request(Application)
-      .post('/users')
+      .post('/api/v1/users')
       .send(user);
 
     expect(response.status).toBe(200);
@@ -24,7 +24,7 @@ describe('User', () => {
     const user = await factory.user({ username: 'abcdefghijklmnoprstuvwxyz' });
 
     const response = await request(Application)
-      .post('/users')
+      .post('/api/v1/users')
       .send(user);
 
     expect(response.status).toBe(400);
