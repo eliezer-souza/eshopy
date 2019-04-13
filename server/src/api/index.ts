@@ -1,10 +1,8 @@
-import express, { Router } from 'express';
-import userRouter from './user';
+import { Router } from 'express';
+import routerV1 from './v1';
 
 const router = Router();
 
-router.use('/docs', express.static('docs'));
-
-router.use('/users', userRouter);
+router.use('/api/v1', routerV1);
 
 export default router;
