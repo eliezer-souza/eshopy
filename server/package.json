@@ -11,6 +11,7 @@
     "build": "tsc -p tsconfig.json",
     "test": "cross-env NODE_ENV=test jest --detectOpenHandles",
     "test:ci": "cross-env NODE_ENV=test jest --ci --detectOpenHandles",
+    "docs": "apidoc -i src -o docs",
     "lint": "tslint -c tslint.json src/**/*.ts"
   },
   "devDependencies": {
@@ -25,6 +26,7 @@
     "@types/morgan": "^1.7.35",
     "@types/node": "^11.12.0",
     "@types/supertest": "^2.0.7",
+    "apidoc": "^0.17.7",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
     "faker": "^4.1.0",
