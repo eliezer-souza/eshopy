@@ -11,6 +11,7 @@ describe('User', () => {
 
   it('should creating an user', async () => {
     const user = await factory.user();
+    console.log(user);
 
     const response = await request(Application)
       .post('/users')
